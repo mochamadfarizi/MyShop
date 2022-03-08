@@ -1,16 +1,27 @@
 package org.online.myshopfirebase.model;
 
-import android.content.Context;
-import android.widget.Spinner;
-import android.widget.Toast;
+import com.google.firebase.database.Query;
 
 import java.io.Serializable;
 
 public class user implements Serializable {
-    private String name;
-    private  String password;
-    private String role;
-    private String key;
+    public String name;
+    public  String password;
+    public String role;
+    public String key;
+
+    public user(String nama, String pass, String rl) {
+        name = nama;
+        password = pass;
+        role=rl;
+    }
+
+    public user(String role) {
+        this.role =role;
+    }
+
+
+
 
     public String getConfirmPassword() {
         return confirmPassword;
@@ -45,7 +56,7 @@ public class user implements Serializable {
         return password;
     }
 
-    public String getRole() {
+    public  String getRole() {
         return role;
     }
 
@@ -53,12 +64,7 @@ public class user implements Serializable {
         return key;
     }
 
-    public user(String nm, String pass,String con, String rl){
-        name = nm;
-        password = pass;
-        confirmPassword=con;
-        role = rl;
-    }
+
 
 
 
